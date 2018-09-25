@@ -1,3 +1,28 @@
-<p>
-  profile works!
-</p>
+<!-- Display my Repos -->
+<div *ngIf="user">
+    <div class="row">
+        <div class="col-md-7">
+            <img src="{{user.img_link}}">
+        </div>
+        <div class="col-md-5">
+            <h3 class="details">{{user.user}}</h3>
+            <p class="details">Username: {{user.user_login}}</p>
+            <p class="details"><i>{{user.user_bio}}</i></p>
+            <p class="details"><a href="{{user.user_link}}" class="btn btn-primary">View on github</a></p>
+        </div>
+    </div>
+
+    <h4>Repositories</h4>
+    <div *ngFor="let repo of repos">
+        <br>
+        <div class="col-sm-12">
+            <p>{{repo.name}}</p>
+            <p>{{repo.description}}</p>
+        </div>
+        <br>
+        <div>
+            <a href="{{repo.repo_link}}" class="btn btn-sm btn-info">View this project</a>
+        </div>
+    </div>
+
+</div>
