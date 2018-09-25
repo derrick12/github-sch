@@ -5,15 +5,17 @@ import {HttpModule} from '@angular/http';
 import { AppComponent } from './app.component';
 import { ProfileComponent } from './components/profile/profile.component';
 import { ProfileService } from './services/profile.service';
+import { SearchComponent } from './components/search/search.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ProfileComponent,
-    HttpModule
+    SearchComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    HttpModule
   ],
   providers: [ProfileService], // make it available throught the app
   bootstrap: [AppComponent]
